@@ -57,6 +57,7 @@ const Form = styled.div`
         border-radius: 5px;
         padding-left: 11px;
         margin-bottom: 5px;
+        font-family: 'Lexend Deca', sans-serif;
         font-weight: 400;
         font-size: 19.976px;
         line-height: 25px;
@@ -71,6 +72,7 @@ const Form = styled.div`
         height: 45px;
         background: #52B6FF;
         border-radius: 4.63636px;
+        font-family: 'Lexend Deca', sans-serif;
         font-weight: 400;
         font-size: 20.976px;
         line-height: 26px;
