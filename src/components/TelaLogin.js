@@ -20,6 +20,7 @@ function TelaLogin() {
 }
 
 const Content = styled.div`
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,6 +44,7 @@ const Content = styled.div`
     }
 `
 const Form = styled.div`
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     
@@ -69,11 +71,12 @@ const Form = styled.div`
     button {
         width: 303px;
         height: 45px;
+        box-sizing: border-box;
         background: #52B6FF;
-        border-radius: 4.63636px;
+        border-radius: 5px;
         font-family: 'Lexend Deca', sans-serif;
         font-weight: 400;
-        font-size: 20.976px;
+        font-size: 21px;
         line-height: 26px;
         color: #FFFFFF;
     }

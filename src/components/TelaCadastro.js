@@ -59,7 +59,7 @@ const Form = styled.div`
         margin-bottom: 5px;
         font-family: 'Lexend Deca', sans-serif;
         font-weight: 400;
-        font-size: 19.976px;
+        font-size: 20px;
         line-height: 25px;
 
         &::placeholder {
@@ -71,10 +71,10 @@ const Form = styled.div`
         width: 303px;
         height: 45px;
         background: #52B6FF;
-        border-radius: 4.63636px;
+        border-radius: 5px;
         font-family: 'Lexend Deca', sans-serif;
         font-weight: 400;
-        font-size: 20.976px;
+        font-size: 21px;
         line-height: 26px;
         color: #FFFFFF;
     }

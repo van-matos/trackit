@@ -11,7 +11,7 @@ function TelaHabitos() {
                 <input placeholder="nome do hábito" />
                 <Week>
                     <Day><h2>D</h2></Day>
-                    <Day><h2>D</h2></Day>
+                    <DaySelected><h2>D</h2></DaySelected>
                     <Day><h2>D</h2></Day>
                     <Day><h2>D</h2></Day>
                     <Day><h2>D</h2></Day>
@@ -24,22 +24,23 @@ function TelaHabitos() {
                     </Save>
                 </Buttons>
             </Habit>
-            
             <p>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</p>
         </Content>
-        
     );
 }
 
 const Content = styled.div`
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 20px 0 20px;
+    padding: 70px 20px;
+    box-sizing: border-box;
     background: #E5E5E5;
-    font-family: 'Lexend Deca';
+    
 
     p {
+        font-family: 'Lexend Deca';
         margin-top: 30px;
         font-weight: 400;
         font-size: 17.976px;
@@ -50,6 +51,7 @@ const Content = styled.div`
 
 const Top = styled.div`
     width: 100%;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -79,9 +81,11 @@ const Icon = styled.div`
 `
 
 const Habit = styled.div`
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     width: 340px;
     height: 180px;
     margin-top: 20px;
@@ -96,10 +100,9 @@ const Habit = styled.div`
         border: 1px solid #D5D5D5;
         border-radius: 5px;
         padding-left: 11px;
-        margin: 20px 0 10px 0;
         font-family: 'Lexend Deca', sans-serif;
         font-weight: 400;
-        font-size: 19.976px;
+        font-size: 20px;
         line-height: 25px;
 
         &::placeholder {
@@ -109,12 +112,12 @@ const Habit = styled.div`
 `
 
 const Week = styled.div`
-    width: 100%;
+    box-sizing: border-box;
     display: flex;
-    justify-content: flex-start;
 `
 
 const Day = styled.div`
+    box-sizing: border-box;    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,7 +137,29 @@ const Day = styled.div`
     }
 `
 
+const DaySelected = styled.div`
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    background: #CFCFCF;
+    border: 1px solid #D5D5D5;
+    border-radius: 5px;
+
+    h2 {
+        font-family: 'Lexend Deca';
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 25px;
+        color: #FFFFFF;
+    }
+`
+
 const Buttons = styled.div`
+    box-sizing: border-box;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -149,11 +174,13 @@ const Buttons = styled.div`
 `
 
 const Save = styled.div`
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 84px;
     height: 35px;
+    margin-left: 25px;
     background: #52B6FF;
     border-radius: 4.63636px;
 

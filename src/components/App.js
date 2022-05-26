@@ -1,24 +1,26 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
+import "../css/reset.css";
+
 import TelaLogin from './TelaLogin';
 import TelaCadastro from './TelaCadastro';
 import TelaHabitos from './TelaHabitos';
 import TelaHoje from './TelaHoje';
 import TelaHistorico from './TelaHistorico';
 
-import Header from './layouts/Header';
-import Menu from './layouts/Menu';
+import Topo from './Topo';
+import Menu from './Menu';
 
 function App() {
     return (
         <BrowserRouter>
-            <Header />
+            <Topo />
             <Routes>
                 <Route path="/" element={<TelaLogin />} />
                 <Route path="/cadastro" element={<TelaCadastro />} />
-                <Route path="/habitos/:userId" element={<TelaHabitos />} />
-                <Route path="/hoje/:userId" element={<TelaHoje />} />
-                <Route path="/historico/:userId" element={<TelaHistorico />} />
+                <Route path="/habitos" element={<TelaHabitos />} />
+                <Route path="/hoje" element={<TelaHoje />} />
+                <Route path="/historico" element={<TelaHistorico />} />
             </Routes>
             <Menu />
         </BrowserRouter>
