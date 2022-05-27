@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import "../css/reset.css";
 
 import TelaLogin from './TelaLogin';
-import TelaCadastro from './TelaCadastro';
+import SignUpScreen from './SignUpScreen';
 import TelaHabitos from './TelaHabitos';
 import TelaHoje from './TelaHoje';
 import TelaHistorico from './TelaHistorico';
@@ -17,7 +17,7 @@ function App() {
             <Topo />
             <Routes>
                 <Route path="/" element={<TelaLogin />} />
-                <Route path="/cadastro" element={<TelaCadastro />} />
+                <Route path="/cadastro" element={<SignUpScreen />} />
                 <Route path="/habitos" element={<TelaHabitos />} />
                 <Route path="/hoje" element={<TelaHoje />} />
                 <Route path="/historico" element={<TelaHistorico />} />

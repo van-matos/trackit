@@ -11,7 +11,7 @@ function TelaHabitos() {
                 <input placeholder="nome do hábito" />
                 <Week>
                     <Day><h2>D</h2></Day>
-                    <DaySelected><h2>D</h2></DaySelected>
+                    <Day><h2>D</h2></Day>
                     <Day><h2>D</h2></Day>
                     <Day><h2>D</h2></Day>
                     <Day><h2>D</h2></Day>
@@ -134,27 +134,6 @@ const Day = styled.div`
         font-size: 20px;
         line-height: 25px;
         color: #DBDBDB;
-    }
-`
-
-const DaySelected = styled.div`
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    margin-right: 5px;
-    background: #CFCFCF;
-    border: 1px solid #D5D5D5;
-    border-radius: 5px;
-
-    h2 {
-        font-family: 'Lexend Deca';
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 25px;
-        color: #FFFFFF;
     }
 `
 
