@@ -1,103 +1,84 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ThreeDots } from "react-loader-spinner";
 import styled from "styled-components";
 import axios from "axios";
 
 import Logo from "../assets/logo.png";
+import UserContext from "../context/UserContext";
 
-function SignUpScreen() {
+function LoginScreen(){
 
     const [email, setEmail] = useState("");
-    const [name, setName] = useState("");
-    const [url, setUrl] = useState("");
     const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
     const [inputColor, setInputColor] = useState("#FFFFFF");
     const [opacity, setOpacity] = useState(1);
-    const [loading, setLoading] = useState(false);
+    const { setUserData } = useContext(UserContext); 
     const navigate = useNavigate();
-
-    const button = loaderSpinner();
-
+    
     function loaderSpinner() {
-        if (!loading) return <p>Cadastrar</p>;
+        if (!loading) return <p>Entrar</p>;
         return <ThreeDots width="51px" height="13px" color="#FFFFFF"/>;
     }
+
+    const button = loaderSpinner();
 
     function submit(e) {
         e.preventDefault();
         setLoading(true);
         setInputColor("#F2F2F2");
         setOpacity(0.7);
-        
-        const signUp = {
+        const user = {
             email: email,
-            name: name,
-            image: url,
             password: password
-        };
-        const promise = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/sign-up", signUp);
-        promise.then(toLogin);
-        promise.catch(failure);
+        }
+        const promise = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login", user);
+        promise.then(response => toToday(response.data));
+        promise.catch(failure)
     }
 
-    function toLogin() {
-        navigate("/");
+    function toToday(data) {
+        setUserData(data.user);
+        navigate("/hoje");
     }
 
     function failure() {
         setLoading(false);
         setEmail("");
-        setName("");
         setPassword("");
-        setUrl("");
         setInputColor("#FFFFFF");
-        setOpacity(1);
+        setOpacity(1)
+        alert("Erro");
     }
 
     return (
         <Container>
             <img src={Logo} alt="Logo"/>
-            <Form onSubmit={submit} color={inputColor} opacit={opacity}>
+            <Form onSubmit={submit} color={inputColor} opacity={opacity}>
                 <input 
                     type="email" 
-                    value={email} 
+                    value={email}  
                     placeholder="email" 
-                    onChange={(e) => setEmail(e.target.value)} 
+                    onChange={(e) => setEmail(e.target.value)}
                     disabled={loading}
-                    required
-                ></input>
+                    required>
+                </input>
                 <input 
                     type="password" 
-                    value={password}
+                    value={password}  
                     placeholder="senha"
-                    onChange={(e) => setPassword(e.target.value)} 
+                    onChange={(e) =>setPassword(e.target.value)} 
                     disabled={loading}
-                    required   
-                ></input>
-                <input 
-                    type="text" 
-                    value={name}  
-                    placeholder="nome"
-                    onChange={(e) => setName(e.target.value)} 
-                    disabled={loading}
-                    required   
-                ></input>
-                <input 
-                    type="url" 
-                    value={url}  
-                    placeholder="foto" 
-                    onChange={(e) => setUrl(e.target.value)}
-                    disabled={loading}
-                    required   
-                ></input>
+                    required>   
+                </input>
                 <button type="submit" disabled={loading}>
                     {button}
                 </button>
             </Form>
-            <Link to="/">
+            <Link to="/cadastro">
                 <p>
-                    Já tem uma conta? Faça login!
+                    Não tem uma conta? Cadastre-se!
                 </p>
             </Link>
         </Container>
@@ -180,4 +161,4 @@ const Form = styled.form`
     }
 `
 
-export default SignUpScreen;
+export default LoginScreen;

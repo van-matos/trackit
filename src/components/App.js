@@ -1,29 +1,30 @@
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import "../css/reset.css";
 
-import TelaLogin from './TelaLogin';
+import LoginScreen from './LoginScreen';
 import SignUpScreen from './SignUpScreen';
 import TelaHabitos from './TelaHabitos';
 import TelaHoje from './TelaHoje';
 import TelaHistorico from './TelaHistorico';
-
-import Topo from './Topo';
-import Menu from './Menu';
+import UserContext from "../context/UserContext";
 
 function App() {
+    const [userData, setUserData] = useState({})
+
     return (
-        <BrowserRouter>
-            <Topo />
-            <Routes>
-                <Route path="/" element={<TelaLogin />} />
-                <Route path="/cadastro" element={<SignUpScreen />} />
-                <Route path="/habitos" element={<TelaHabitos />} />
-                <Route path="/hoje" element={<TelaHoje />} />
-                <Route path="/historico" element={<TelaHistorico />} />
-            </Routes>
-            <Menu />
-        </BrowserRouter>
+        <UserContext.Provider value={{userData, setUserData}}>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<LoginScreen />} />
+                    <Route path="/cadastro" element={<SignUpScreen />} />
+                    <Route path="/habitos" element={<TelaHabitos />} />
+                    <Route path="/hoje" element={<TelaHoje />} />
+                    <Route path="/historico" element={<TelaHistorico />} />
+                </Routes>
+            </BrowserRouter>
+        </UserContext.Provider>
     );
 }
 
