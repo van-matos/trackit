@@ -53,6 +53,7 @@ function SignUpScreen() {
         setUrl("");
         setInputColor("#FFFFFF");
         setOpacity(1);
+        alert("Erro");
     }
 
     return (
