@@ -1,31 +1,38 @@
 import styled from "styled-components";
+import TopBar from "./TopBar";
+import Menu from "./Menu";
 
 function TelaHabitos() {
     return (
-        <Content>
-            <Top>
-                <h1>Meus Hábitos</h1>
-                <Icon><ion-icon name="add-outline"></ion-icon></Icon>
-            </Top>
-            <Habit>
-                <input placeholder="nome do hábito" />
-                <Week>
-                    <Day><h2>D</h2></Day>
-                    <Day><h2>D</h2></Day>
-                    <Day><h2>D</h2></Day>
-                    <Day><h2>D</h2></Day>
-                    <Day><h2>D</h2></Day>
-                    <Day><h2>D</h2></Day>
-                </Week>
-                <Buttons>
-                    <h2>Cancelar</h2>
-                    <Save>
-                        <h2>Salvar</h2>
-                    </Save>
-                </Buttons>
-            </Habit>
-            <p>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</p>
-        </Content>
+        <>  
+            <TopBar />
+            <Content>
+                <Top>
+                    <h1>Meus Hábitos</h1>
+                    <Icon><ion-icon name="add-outline"></ion-icon></Icon>
+                </Top>
+                <Habit>
+                    <input placeholder="nome do hábito" />
+                    <Week>
+                        <Day><h2>D</h2></Day>
+                        <Day><h2>D</h2></Day>
+                        <Day><h2>D</h2></Day>
+                        <Day><h2>D</h2></Day>
+                        <Day><h2>D</h2></Day>
+                        <Day><h2>D</h2></Day>
+                    </Week>
+                    <Buttons>
+                        <h2>Cancelar</h2>
+                        <Save>
+                            <h2>Salvar</h2>
+                        </Save>
+                    </Buttons>
+                </Habit>
+                <p>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</p>
+            </Content>
+            <Menu />
+        </>
+        
     );
 }
 

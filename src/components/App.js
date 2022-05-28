@@ -11,8 +11,9 @@ import TelaHistorico from './TelaHistorico';
 import UserContext from "../context/UserContext";
 
 function App() {
-    const [userData, setUserData] = useState({})
 
+    const [userData, setUserData] = useState({});
+    
     return (
         <UserContext.Provider value={{userData, setUserData}}>
             <BrowserRouter>

@@ -1,21 +1,28 @@
 import styled from "styled-components";
 
+import TopBar from "./TopBar";
+import Menu from "./Menu";
 import Checkmark from "../assets/checkmark.png"
 
 function TelaHoje() {
     return (
-        <Content>
-            <h1>Segunda, 17/05</h1>
-            <h2>Nenhum hábito concluído ainda</h2>
-            <Habit>
-                <div>
-                    <h1>Ler 1 capítulo de livro</h1>
-                    <p>Sequência atual: 3 dias</p>
-                    <p>Seu recorde: 5 dias</p>
-                </div>
-                <Icon><img src={Checkmark} alt="Checkmark"/></Icon>
-            </Habit>
-        </Content>
+        <>
+            <TopBar />
+            <Content>
+                <h1>Segunda, 17/05</h1>
+                <h2>Nenhum hábito concluído ainda</h2>
+                <Habit>
+                    <div>
+                        <h1>Ler 1 capítulo de livro</h1>
+                        <p>Sequência atual: 3 dias</p>
+                        <p>Seu recorde: 5 dias</p>
+                    </div>
+                    <Icon><img src={Checkmark} alt="Checkmark"/></Icon>
+                </Habit>
+            </Content>
+            <Menu />
+        </>
+        
     );
 }
 

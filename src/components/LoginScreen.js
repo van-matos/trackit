@@ -39,7 +39,8 @@ function LoginScreen(){
     }
 
     function toToday(data) {
-        setUserData(data.user);
+        console.log(data);
+        setUserData(data);
         navigate("/hoje");
     }
 

@@ -1,12 +1,16 @@
+import { useContext } from "react";
 import styled from "styled-components";
 
-import UserImage from "../assets/userimage.png" 
+import UserContext from "../context/UserContext";
 
-function Topo() {
+function TopBar() {
+
+    const { userData } = useContext(UserContext);
+
     return(
         <Header>
             <p>TrackIt</p>
-            <img src={UserImage} alt="Placeholder"/>
+            <img src={userData.image} alt=""/>
         </Header>
     );
 }
@@ -40,4 +44,4 @@ const Header = styled.div`
     }
 `
 
-export default Topo;
+export default TopBar;
