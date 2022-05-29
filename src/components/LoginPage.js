@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ThreeDots } from "react-loader-spinner";
-import styled from "styled-components";
 import axios from "axios";
+import styled from "styled-components";
 
 import Logo from "../assets/logo.png";
+
 import UserContext from "../context/UserContext";
 
 function LoginPage(){

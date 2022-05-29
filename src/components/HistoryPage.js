@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-import TopBar from "./TopBar";
 import MenuBar from "./MenuBar";
+import TopBar from "./TopBar";
 
-function TelaHistorico() {
+function HistoryPage() {
     return (
         <>
             <TopBar />
@@ -13,7 +13,6 @@ function TelaHistorico() {
             </Content>
             <MenuBar />
         </>
-        
     );
 }
 
@@ -41,4 +40,4 @@ const Content = styled.div`
     }
 `
 
-export default TelaHistorico;
+export default HistoryPage;

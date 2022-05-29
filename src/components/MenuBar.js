@@ -1,9 +1,14 @@
-import styled from "styled-components";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import 'react-circular-progressbar/dist/styles.css';
+import styled from "styled-components";
+
+import CompletedHabits from "../context/CompletedHabits";
 
 function MenuBar () {
+
+    const { completedHabits }= useContext(CompletedHabits);
 
     return (
         <MenuStyle>
@@ -12,7 +17,7 @@ function MenuBar () {
                 <ProgressbarStyle >
                     <Link to={"/hoje"}>
                         <CircularProgressbar
-                            value="50"
+                            value={completedHabits*100}
                             text="Hoje"
                             background
                             backgroundPadding={6}
