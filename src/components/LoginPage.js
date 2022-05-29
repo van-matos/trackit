@@ -7,12 +7,12 @@ import axios from "axios";
 import Logo from "../assets/logo.png";
 import UserContext from "../context/UserContext";
 
-function LoginScreen(){
+function LoginPage(){
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
-    const [inputColor, setInputColor] = useState("#FFFFFF");
+    const [inputBackground, setInputBackground] = useState("#FFFFFF");
     const [opacity, setOpacity] = useState(1);
     const { setUserData } = useContext(UserContext); 
     const navigate = useNavigate();
@@ -27,7 +27,7 @@ function LoginScreen(){
     function submit(e) {
         e.preventDefault();
         setLoading(true);
-        setInputColor("#F2F2F2");
+        setInputBackground("#F2F2F2");
         setOpacity(0.7);
         const user = {
             email: email,
@@ -48,7 +48,7 @@ function LoginScreen(){
         setLoading(false);
         setEmail("");
         setPassword("");
-        setInputColor("#FFFFFF");
+        setInputBackground("#FFFFFF");
         setOpacity(1)
         alert("Erro");
     }
@@ -56,7 +56,7 @@ function LoginScreen(){
     return (
         <Container>
             <img src={Logo} alt="Logo"/>
-            <Form onSubmit={submit} color={inputColor} opacity={opacity}>
+            <Form onSubmit={submit} color={inputBackground} opacity={opacity}>
                 <input 
                     type="email" 
                     value={email}  
@@ -126,7 +126,7 @@ const Form = styled.form`
         height: 45px;
         margin-bottom: 6px;
         padding-left: 11px;
-        background-color: ${props => props.inputColor};
+        background-color: ${props => props.inputBackground};
         border: 1px solid #D4D4D4;
         border-radius: 5px;
         font-family: 'Lexend Deca', sans-serif;
@@ -162,4 +162,4 @@ const Form = styled.form`
     }
 `
 
-export default LoginScreen;
+export default LoginPage;

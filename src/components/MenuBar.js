@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import 'react-circular-progressbar/dist/styles.css';
 
-function Menu () {
+function MenuBar () {
 
     return (
         <MenuStyle>
@@ -82,4 +82,4 @@ const ProgressbarStyle = styled.div`
     line-height: 22px;
 `
 
-export default Menu;
+export default MenuBar;

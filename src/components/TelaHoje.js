@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 import TopBar from "./TopBar";
-import Menu from "./Menu";
+import MenuBar from "./MenuBar";
+
 import Checkmark from "../assets/checkmark.png"
 
 function TelaHoje() {
@@ -20,7 +21,7 @@ function TelaHoje() {
                     <Icon><img src={Checkmark} alt="Checkmark"/></Icon>
                 </Habit>
             </Content>
-            <Menu />
+            <MenuBar />
         </>
         
     );

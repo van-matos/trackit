@@ -3,9 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import "../css/reset.css";
 
-import LoginScreen from './LoginScreen';
-import SignUpScreen from './SignUpScreen';
-import TelaHabitos from './TelaHabitos';
+import LoginPage from './LoginPage';
+import SignUpPage from './SignUpPage';
+import HabitsPage from './HabitsPage';
 import TelaHoje from './TelaHoje';
 import TelaHistorico from './TelaHistorico';
 import UserContext from "../context/UserContext";
@@ -18,9 +18,9 @@ function App() {
         <UserContext.Provider value={{userData, setUserData}}>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<LoginScreen />} />
-                    <Route path="/cadastro" element={<SignUpScreen />} />
-                    <Route path="/habitos" element={<TelaHabitos />} />
+                    <Route path="/" element={<LoginPage />} />
+                    <Route path="/cadastro" element={<SignUpPage />} />
+                    <Route path="/habitos" element={<HabitsPage />} />
                     <Route path="/hoje" element={<TelaHoje />} />
                     <Route path="/historico" element={<TelaHistorico />} />
                 </Routes>

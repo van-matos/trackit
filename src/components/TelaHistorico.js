@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import TopBar from "./TopBar";
-import Menu from "./Menu"
+import MenuBar from "./MenuBar";
 
 function TelaHistorico() {
     return (
@@ -11,7 +11,7 @@ function TelaHistorico() {
                 <h1>Histórico</h1>
                 <p>Em breve você poderá ver o histórico dos seus hábitos aqui!</p>
             </Content>
-            <Menu />
+            <MenuBar />
         </>
         
     );
