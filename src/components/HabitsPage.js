@@ -145,7 +145,7 @@ const Container = styled.div`
     box-sizing: border-box;
     min-height: 100vh;
     padding: 90px 20px 70px 20px;
-    background-color: #F2F2F2;
+    background: #E5E5E5;
 `
 
 const Top = styled.div`

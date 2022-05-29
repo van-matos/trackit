@@ -17,26 +17,27 @@ function HistoryPage() {
 }
 
 const Content = styled.div`
-    background: #E5E5E5;;
-    padding: 70px 15px;
     box-sizing: border-box;
+    min-height: 100vh;
+    padding: 70px 15px;
+    background: #E5E5E5;
 
     h1 {
+        margin-top: 28px;
         font-family: 'Lexend Deca', sans-serif;
         font-weight: 400;
         font-size: 23px;
         line-height: 29px;
         color: #126BA5;
-        margin-top: 28px;
     }
 
     p {
+        margin-top: 17px;
         font-family: 'Lexend Deca', sans-serif;
         font-weight: 400;
         font-size: 18px;
         line-height: 22px;
         color: #666666;
-        margin-top: 17px;
     }
 `
 

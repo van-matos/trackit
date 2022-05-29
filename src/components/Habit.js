@@ -60,7 +60,7 @@ export default function Habit({ habit, habits, setHabits }) {
 
 const Container = styled.div`
     box-sizing: border-box;
-    width: 340px;
+    width: 100%;
     height: 91px;
     margin-top: 20px;
     padding: 15px;

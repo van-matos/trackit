@@ -37,8 +37,14 @@ function DailyPage() {
         promise.then(response => setDailyHabits(response.data));
     }, [dailyHabits]);
 
-    useEffect(() => setCompletedHabits(dailyHabits.filter( habit => habit.done === true).length / dailyHabits.length), [dailyHabits]);
-
+    useEffect(() => {
+        if (dailyHabits.length) {
+            setCompletedHabits(dailyHabits.filter( habit => habit.done === true).length / dailyHabits.length);
+        } else {
+            setCompletedHabits(0);
+        }
+    }, [dailyHabits]);
+    
     function habitsCompleted() {
         if (completedHabits) {
             return (
@@ -54,7 +60,7 @@ function DailyPage() {
         if (dailyHabits.length) {
             return dailyHabits.map( (habit) => <DailyHabit key={habit.id} habitName={habit.name} habitId={habit.id} isDone={habit.done} currentSequence={habit.currentSequence} highestSequence={habit.highestSequence} />);
         }
-        else return <p>Parece que você não tem hábitos ainda, que tal criar algum?</p>;
+        else return <p>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</p>;
     }
 
     const completion = habitsCompleted();
@@ -79,7 +85,15 @@ const Container = styled.div`
     box-sizing: border-box;
     min-height: 100vh;
     padding: 90px 17px 70px 17px;
-    background-color: #F2F2F2;
+    background: #E5E5E5;
+
+    p  {
+        font-family: 'Lexend Deca', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: #666666;
+    }
 `
 
 const Top = styled.div`

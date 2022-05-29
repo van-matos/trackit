@@ -7,8 +7,11 @@ import UserContext from "../context/UserContext";
 
 function DailyHabit({ habitName, habitId, isDone, currentSequence, highestSequence }) {
 
-    const buttonBackgroundColor = isDone ? "#8FC549" : "#EBEBEB";
     const { userData } = useContext(UserContext);
+
+    const buttonBackgroundColor = isDone ? "#8FC549" : "#EBEBEB";
+    const currentSequenceColor = isDone ? "#8FC549" : "#666666";
+    const highestSequenceColor = highestSequence === currentSequence ? currentSequenceColor : "#666666"
 
     function toggleCheck() {
         const config = {
@@ -25,11 +28,11 @@ function DailyHabit({ habitName, habitId, isDone, currentSequence, highestSequen
 
     return (
         <Container buttonBackgroundColor={buttonBackgroundColor}>
-            <Description>
+            <Description currentSequenceColor={currentSequenceColor} highestSequenceColor={highestSequenceColor}>
                 <h1>{habitName}</h1>
                 <div>
-                    <p>Sequência atual: {currentSequence}</p>
-                    <p>Seu recorde: {highestSequence}</p>
+                    <p>Sequência atual: <span>{currentSequence} {currentSequence > 1 ? "dias" : "dia"}</span></p>
+                    <p>Seu recorde: <span>{highestSequence} {highestSequence > 1 ? "dias" : "dia"}</span></p>
                 </div>
             </Description>
             <button onClick={toggleCheck}>
@@ -70,7 +73,7 @@ const Description = styled.div`
     h1 {
         font-family: 'Lexend Deca', sans-serif;
         font-weight: 400;
-        font-size: 19.976px;
+        font-size: 20px;
         line-height: 25px;
         color: #666666;
     }
@@ -78,12 +81,28 @@ const Description = styled.div`
     div {
         margin-top: 7px;
 
-        p {
+        p:first-child {
+            font-family: 'Lexend Deca', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 16px;
+            color: #666666;
+
+            span {
+                color: ${props => props.currentSequenceColor}
+            }
+        }
+
+        p:last-child {
             font-family: 'Lexend Deca', sans-serif;
             font-weight: 400;
             font-size: 12.976px;
             line-height: 16px;
             color: #666666;
+
+            span {
+                color: ${props => props.highestSequenceColor}
+            }
         }
     }
 `
